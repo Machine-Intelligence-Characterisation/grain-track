@@ -38,9 +38,6 @@ with open(r"Grain Track Data/step67_track_result_dict.pickle", "rb") as f:
 steps = [step1, step2, step3, step4, step5, step6]
 
 merged_step_maps = []
-confident_tracks = []
-retrack_results = []
-trip_start_grains = []
 
 for step_data in steps:
     confident_track = convert_to_dict(step_data['confident_track'])
@@ -48,10 +45,6 @@ for step_data in steps:
     # split = convert_to_dict(step_data['split_grains'])
     trip_start_grain = convert_to_dict(step_data['trip_start_grains'])
     # position = convert_to_dict(step_data['track_based_on_position'])
-    
-    confident_tracks.append(confident_track)
-    retrack_results.append(retrack_result)
-    trip_start_grains.append(trip_start_grain)
 
     merged_map = {}
     for d in [confident_track, retrack_result, trip_start_grain]: 
